@@ -64,15 +64,6 @@
                 <i class="iconfont icon-liulan" style="color: #666"></i>
                 <h5>{{'Index.RecentlyViewedItems' | translate }}</h5>
             </div>
-            
-            <div class="public-namespace-list-show" ng-click="changeContent('3')" ng-show="whichContent==='3'">
-                <i class="iconfont icon-gonggongziliao"></i>
-                <h5>{{'Index.PublicNamespace' | translate }}</h5>
-            </div>
-            <div class="public-namespace-list-choose" ng-click="changeContent('3')" ng-show="whichContent!=='3'">
-                <i class="iconfont icon-gonggongziliao" style="color: #666"></i>
-                <h5>{{'Index.PublicNamespace' | translate }}</h5>
-            </div>
 
         </div>
         <div class="main-table">
@@ -150,42 +141,6 @@
                 <div ng-show="!hasMoreFavorites" style="height: 15px"></div>
                 <div class="homepage-loading-more-panel" ng-show="hasMoreFavorites"
                      ng-click="getUserFavorites()">
-                    <div href="#" class="thumbnail hover cursor-pointer"
-                         style="display: flex;justify-content: center;align-items: center">
-                        <div><img class="more-img" src="img/more.png" /></div>
-                        <div style="margin-left: 5px"><h5>{{'Index.LoadMore' | translate }}</h5></div>
-                    </div>
-                </div>
-            </div>
-            <div class="public-namespace-list" ng-show="whichContent==='3'">
-                <div class="wapper">
-                    <select id="public-name-spaces-search-list" data-placeholder="{{'Index.SearchNamespace' | translate }}" style="width: 350px">
-                        <option value=""></option>
-                    </select>
-                </div>
-                <div class="display-table" ng-show="publicNamespaces.length > 0">
-                    <table>
-                        <tr>
-                            <th style="width: 20%">{{'Common.Namespace' | translate }}</th>
-                            <th style="width: 30%">{{'Common.AppId' | translate }}</th>
-                            <th style="width: 20%">{{'Index.appTable.Format' | translate }}</th>
-                            <th style="width: 30%">{{'Index.appTable.Comment' | translate }}</th>
-                        </tr>
-                        <tr ng-repeat="app in publicNamespaces" ng-click="goToAppHomePage(app.appId)"
-                            href="#" class="hover cursor-pointer">
-                            <td style="width: 20%">{{ app.name }}</td>
-                            <td style="width: 30%">{{ app.appId }}</td>
-                            <td style="width: 20%">{{ app.format }}</td>
-                            <td style="width: 30%">{{ app.comment }}</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="no-public text-center" ng-show="!publicNamespaces || publicNamespaces.length == 0">
-                    <h4>{{'Index.PublicNamespaceTip' | translate }}</h4>
-                </div>
-                <div ng-show="!hasMorePublicNamespaces" style="height: 15px"></div>
-                <div class="homepage-loading-more-panel" ng-show="hasMorePublicNamespaces"
-                     ng-click="morePublicNamespace()">
                     <div href="#" class="thumbnail hover cursor-pointer"
                          style="display: flex;justify-content: center;align-items: center">
                         <div><img class="more-img" src="img/more.png" /></div>
