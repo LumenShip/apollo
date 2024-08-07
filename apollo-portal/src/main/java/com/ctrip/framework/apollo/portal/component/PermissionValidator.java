@@ -130,11 +130,11 @@ public class PermissionValidator {
       return false;
     }
 
-    // 2. public namespace is open to every one
-    AppNamespace appNamespace = appNamespaceService.findByAppIdAndName(appId, namespaceName);
-    if (appNamespace != null && appNamespace.isPublic()) {
-      return false;
-    }
+    // 2. public namespace is open to every one(here not for every one)
+//    AppNamespace appNamespace = appNamespaceService.findByAppIdAndName(appId, namespaceName);
+//    if (appNamespace != null && appNamespace.isPublic()) {
+//      return false;
+//    }
 
     // 3. check app admin and operate permissions
     return !isAppAdmin(appId) && !hasOperateNamespacePermission(appId, namespaceName, env);

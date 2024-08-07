@@ -98,6 +98,11 @@ public class NamespaceController {
     this.namespaceAPI = namespaceAPI;
   }
 
+  @GetMapping("/appnamespaces/public")
+  public List<AppNamespace> findPublicAppNamespaces() {
+    return appNamespaceService.findPublicAppNamespaces();
+  }
+
   @GetMapping("/apps/{appId}/envs/{env}/clusters/{clusterName}/namespaces")
   public List<NamespaceBO> findNamespaces(@PathVariable String appId, @PathVariable String env,
                                           @PathVariable String clusterName) {
